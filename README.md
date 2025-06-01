@@ -1,3 +1,18 @@
 # Homebrew Tools (Tap)
 
-This repo contains all the homebrew tools which I need.
+This repository contains Homebrew formulae for tools I use regularly.
+
+## Tools
+- **`dineroIV`** cache simulator by Mark D. Hill. [**Source code repository**](https://github.com/atos-tools/dineroIV)
+- **`neofetch`** (The public archive) [**Source code repository**](https://github.com/dylanaraps/neofetch)
+
+## Installation
+
+To install any formula from this tap, run these commands:
+
+```sh
+brew tap rennaMAhcuS/tools  # If installing any formula from this tap for the first time
+brew install rennaMAhcuS/tools/<formula>  # Install the formula
+```
+
+Replace `<formula>` with the name of the tool you wish to install.
