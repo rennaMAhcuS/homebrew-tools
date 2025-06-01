@@ -2,16 +2,13 @@ class Dineroiv < Formula
   desc "Cache simulator dineroIV by Mark D. Hill"
   homepage "https://github.com/atos-tools/dineroIV"
   url "https://github.com/atos-tools/dineroIV/archive/refs/heads/master.tar.gz"
-  version "master"
+  version "4"
   sha256 "6f1b5e2049b061663432aa2d89659258cfa1d857d93f5cd1aa681105ac9110df"
 
   depends_on "gcc"
 
   def install
     on_macos do
-      ENV["CC"] = Formula["gcc"].opt_bin/"gcc-14"
-      ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
-
       mkdir "dineroIV-build" do
         system "../configure", "--prefix=#{prefix}"
         system "make", "-j#{`sysctl -n hw.ncpu`.chomp}"
