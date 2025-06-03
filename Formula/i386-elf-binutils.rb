@@ -8,9 +8,6 @@ class I386ElfBinutils < Formula
 
   on_macos do
     def install
-      ENV["CC"] = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}"
-      ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-
       mkdir "binutils-build" do
         system "../configure", "--prefix=#{prefix}",
                                "--target=i386-elf",

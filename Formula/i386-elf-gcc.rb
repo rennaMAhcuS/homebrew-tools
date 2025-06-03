@@ -12,9 +12,6 @@ class I386ElfGcc < Formula
 
   on_macos do
     def install
-      ENV["CC"] = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}"
-      ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-
       mkdir "gcc-build" do
         system "../configure", "--prefix=#{prefix}",
                               "--target=i386-elf",
@@ -31,7 +28,7 @@ class I386ElfGcc < Formula
 
         # Link binutils for GCC to find
         binutils = Formula["rennamahcus/tools/i386-elf-binutils"].prefix
-        ln_sf "#{binutils}/i386-elf", "#{prefix}/i386-elf"
+        ln_s "#{binutils}/i386-elf", "#{prefix}/i386-elf"
       end
     end
   end
