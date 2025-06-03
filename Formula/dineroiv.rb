@@ -29,8 +29,8 @@ class Dineroiv < Formula
       system "./configure"
       cd "testing" do
         system "make"
-        system "env", "PATH=#{ENV["PATH"]}:#{bin}", "./testscript"
-        system "env", "D4_SRC=#{bin}", "PATH=#{ENV["PATH"]}:#{bin}", "./testscript", "-c"
+        system "./testscript"
+        system "D4_SRC=..", "./testscript", "-c"
       end
     end
   end
