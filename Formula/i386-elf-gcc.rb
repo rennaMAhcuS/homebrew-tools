@@ -43,7 +43,7 @@ class I386ElfGcc < Formula
     }
     DATA
     system "#{bin}/i386-elf-gcc", "-c", "program.c"
-    binutils = Formula["nativeos/i386-elf-toolchain/i386-elf-binutils"].prefix
+    binutils = Formula["rennamahcus/i386-elf-toolchain/i386-elf-binutils"].prefix
     assert_match "file format elf32-i386", shell_output("#{binutils}/bin/i386-elf-objdump -D program.o")
   end
 end
