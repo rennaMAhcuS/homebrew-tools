@@ -30,7 +30,7 @@ class Dineroiv < Formula
       cd "testing" do
         system "make"
         system "./testscript"
-        system "D4_SRC=..", "./testscript", "-c"
+        system "./testscript", "-c"
       end
     end
   end
