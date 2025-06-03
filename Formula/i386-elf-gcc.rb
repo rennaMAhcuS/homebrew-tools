@@ -7,7 +7,6 @@ class I386ElfGcc < Formula
   depends_on "gmp" => :build
   depends_on "mpfr" => :build
   depends_on "libmpc"
-  depends_on "gcc"
   depends_on "rennamahcus/tools/i386-elf-binutils"
 
   on_macos do
@@ -40,7 +39,7 @@ class I386ElfGcc < Formula
     }
     DATA
     system "#{bin}/i386-elf-gcc", "-c", "program.c"
-    binutils = Formula["rennamahcus/i386-elf-toolchain/i386-elf-binutils"].prefix
+    binutils = Formula["rennamahcus/tools/i386-elf-binutils"].prefix
     assert_match "file format elf32-i386", shell_output("#{binutils}/bin/i386-elf-objdump -D program.o")
   end
 end
