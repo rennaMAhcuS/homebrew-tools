@@ -4,7 +4,7 @@ class Dineroiv < Formula
   url "https://github.com/atos-tools/dineroIV/archive/refs/heads/master.tar.gz"
   version "4"
   sha256 "6f1b5e2049b061663432aa2d89659258cfa1d857d93f5cd1aa681105ac9110df"
-  
+
   def install
     mkdir "dineroIV-build" do
       system "../configure", "--prefix=#{prefix}"
@@ -20,9 +20,9 @@ class Dineroiv < Formula
     resource_url = "https://github.com/atos-tools/dineroIV/archive/refs/heads/master.tar.gz"
     tarball = "dineroIV.tar.gz"
     repo_dir = testpath/"dineroIV"
-  
+
     system "curl", "-L", resource_url, "-o", tarball
-    system "mkdir", "-p", repo_dir
+    mkdir_p repo_dir
     system "tar", "-xvf", tarball, "-C", repo_dir, "--strip-components=1"
 
     cd repo_dir do

@@ -1,7 +1,7 @@
 class I386ElfGcc < Formula
   desc "GNU Compiler Collection targetting i386-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz"
   sha256 "e2b09ec21660f01fecffb715e0120265216943f038d0e48a9868713e54f06cea"
 
   depends_on "gmp" => :build
@@ -34,11 +34,11 @@ class I386ElfGcc < Formula
 
   test do
     (testpath/"program.c").write <<~DATA
-    int sum(int a, int b) {
-      return a + b;
-    }
+      int sum(int a, int b) {
+        return a + b;
+      }
     DATA
-    system "#{bin}/i386-elf-gcc", "-c", "program.c"
+    system "bin/i386-elf-gcc", "-c", "program.c"
     binutils = Formula["rennamahcus/tools/i386-elf-binutils"].prefix
     assert_match "file format elf32-i386", shell_output("#{binutils}/bin/i386-elf-objdump -D program.o")
   end
