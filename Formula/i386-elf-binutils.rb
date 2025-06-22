@@ -4,16 +4,16 @@ class I386ElfBinutils < Formula
   url "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz"
   sha256 "ce2017e059d63e67ddb9240e9d4ec49c2893605035cd60e92ad53177f4377237"
 
-  on_macos do
-    def install
-      mkdir "binutils-build" do
-        system "../configure", "--prefix=#{prefix}",
-                               "--target=i386-elf",
-                               "--with-system-zlib"
+  depends_on :macos
 
-        system "make", "-j#{ENV.make_jobs}"
-        system "make", "install"
-      end
+  def install
+    mkdir "binutils-build" do
+      system "../configure", "--prefix=#{prefix}",
+                              "--target=i386-elf",
+                              "--with-system-zlib"
+
+      system "make", "-j#{ENV.make_jobs}"
+      system "make", "install"
     end
   end
 
