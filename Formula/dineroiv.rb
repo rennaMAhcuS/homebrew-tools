@@ -19,7 +19,7 @@ class Dineroiv < Formula
         end
       end
     end
-    
+
     system "make", "install"
 
     man1.install "./d4.1" => "dineroIV.1"
