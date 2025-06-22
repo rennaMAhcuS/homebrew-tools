@@ -27,6 +27,6 @@ class Dineroiv < Formula
   end
 
   test do
-    system "#{bin}/dineroIV", "-help"
+    system bin/"dineroIV", "-help"
   end
 end
