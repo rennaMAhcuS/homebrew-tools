@@ -1,6 +1,6 @@
 # Homebrew Tools (Tap)
 
-This repository contains Homebrew formulae for tools I use regularly.
+This repository contains Homebrew formulae for the tools needed.
 
 ## Tools
 
