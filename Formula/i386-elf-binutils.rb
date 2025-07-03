@@ -11,7 +11,9 @@ class I386ElfBinutils < Formula
 
   def install
     mkdir "build" do
-      system "../configure", *std_configure_args, "--target=i386-elf", "--with-system-zlib"
+      system "../configure", *std_configure_args,
+                            "--target=i386-elf",
+                            "--with-system-zlib"
       system "make", "-j#{ENV.make_jobs}"
       system "make", "install"
     end
