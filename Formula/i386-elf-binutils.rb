@@ -1,20 +1,15 @@
 class I386ElfBinutils < Formula
   desc "GNU Binutils targetting i386-elf"
   homepage "https://www.gnu.org/software/binutils"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.44.tar.xz"
   sha256 "ce2017e059d63e67ddb9240e9d4ec49c2893605035cd60e92ad53177f4377237"
 
   depends_on :macos
 
   def install
-    mkdir "binutils-build" do
-      system "../configure", "--prefix=#{prefix}",
-                              "--target=i386-elf",
-                              "--with-system-zlib"
-
-      system "make", "-j#{ENV.make_jobs}"
-      system "make", "install"
-    end
+    system "./configure", *std_configure_args, "--target=i386-elf", "--with-system-zlib"
+    system "make", "-j#{ENV.make_jobs}"
+    system "make", "install"
   end
 
   test do
