@@ -13,18 +13,20 @@ class I386ElfGcc < Formula
   depends_on "rennamahcus/tools/i386-elf-binutils"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--target=i386-elf",
-                          "--with-system-zlib",
-                          "--enable-languages=c,c++",
-                          "--with-gmp=#{Formula["gmp"].opt_prefix}",
-                          "--with-mpfr=#{Formula["mpfr"].opt_prefix}",
-                          "--with-mpc=#{Formula["libmpc"].opt_prefix}"
+    mkdir "build" do
+      system "../configure", *std_configure_args,
+                            "--target=i386-elf",
+                            "--with-system-zlib",
+                            "--enable-languages=c,c++",
+                            "--with-gmp=#{Formula["gmp"].opt_prefix}",
+                            "--with-mpfr=#{Formula["mpfr"].opt_prefix}",
+                            "--with-mpc=#{Formula["libmpc"].opt_prefix}"
 
-    system "make", "-j#{ENV.make_jobs}", "all-gcc"
-    system "make", "install-gcc"
-    system "make", "-j#{ENV.make_jobs}", "all-target-libgcc"
-    system "make", "install-target-libgcc"
+      system "make", "-j#{ENV.make_jobs}", "all-gcc"
+      system "make", "install-gcc"
+      system "make", "-j#{ENV.make_jobs}", "all-target-libgcc"
+      system "make", "install-target-libgcc"
+    end
 
     # Link binutils for GCC to find
     binutils = Formula["rennamahcus/tools/i386-elf-binutils"].prefix

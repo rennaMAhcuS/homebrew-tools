@@ -10,9 +10,11 @@ class I386ElfBinutils < Formula
   depends_on :macos
 
   def install
-    system "./configure", *std_configure_args, "--target=i386-elf", "--with-system-zlib"
-    system "make", "-j#{ENV.make_jobs}"
-    system "make", "install"
+    mkdir "build" do
+      system "../configure", *std_configure_args, "--target=i386-elf", "--with-system-zlib"
+      system "make", "-j#{ENV.make_jobs}"
+      system "make", "install"
+    end
   end
 
   test do
