@@ -1,7 +1,8 @@
 class I386ElfBinutils < Formula
   desc "GNU Binutils targetting i386-elf"
   homepage "https://www.gnu.org/software/binutils"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.44.tar.xz"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.44.tar.xz"
   sha256 "ce2017e059d63e67ddb9240e9d4ec49c2893605035cd60e92ad53177f4377237"
 
   depends_on :macos
