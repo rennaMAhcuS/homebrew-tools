@@ -2,7 +2,7 @@ class Dineroiv < Formula
   desc "Cache simulator dineroIV by Mark D. Hill"
   homepage "https://github.com/atos-tools/dineroIV"
   # Patched updated dineroIV
-  url "https://github.com/atos-tools/dineroIV/archive/refs/heads/master.tar.gz"
+  url "https://github.com/atos-tools/dineroIV/archive/cb3724c72915c1634db8434d4fbb45e536a78e78.tar.gz"
   version "4"
   sha256 "6f1b5e2049b061663432aa2d89659258cfa1d857d93f5cd1aa681105ac9110df"
 
