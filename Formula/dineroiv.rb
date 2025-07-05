@@ -4,7 +4,7 @@ class Dineroiv < Formula
   # Patched updated dineroIV
   url "https://github.com/atos-tools/dineroIV/archive/cb3724c72915c1634db8434d4fbb45e536a78e78.tar.gz"
   version "4"
-  sha256 "6f1b5e2049b061663432aa2d89659258cfa1d857d93f5cd1aa681105ac9110df"
+  sha256 "f3239e5b313ff5d1b2a3ec113fcfa410986bb012d0e2c7e349b00f02d515999c"
 
   def install
     system "./configure", *std_configure_args
