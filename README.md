@@ -14,7 +14,7 @@ This repository contains Homebrew formulae for some tools that I use.
 
 Or `brew tap rennamahcus/tools` and then `brew install <formula>`.
 
-Or, in a `brew bundle` `Brewfile`:
+Or, in a `brew bundle Brewfile`:
 
 ```ruby
 tap "rennamahcus/tools"
